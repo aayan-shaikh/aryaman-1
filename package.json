@@ -1,0 +1,21 @@
+{
+  "name": "aryaman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "astro": "^5.8.2"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.89.1"
+  }
+}

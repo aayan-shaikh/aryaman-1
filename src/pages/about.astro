@@ -1,0 +1,69 @@
+---
+import BaseLayout from "./layouts/BaseLayout.astro";
+// import heroImage from "../assets/images/about-hero.avif";
+import "../scss/pages/about.scss";
+---
+
+<BaseLayout>
+    <main class="about content-grid">
+        <section class="about__hero">
+            <!-- <img
+                src={heroImage.src}
+                alt="About Hero"
+                class="full-width hard-shadow"
+                width="1200"
+                height="600"
+            /> -->
+            <div class="about__hero-overlay">
+                <h1>About Me</h1>
+                <p>Creating timeless designs that inspire and delight.</p>
+            </div>
+        </section>
+
+        <section class="about__intro">
+            <p>
+                I'm a passionate designer with a focus on crafting unique,
+                functional products like the Spaceman Cup and Aura Table. My
+                work blends creativity with practicality, aiming to elevate
+                everyday experiences through thoughtful design. Based in [Your
+                Location], I draw inspiration from the world around me to create
+                pieces that spark joy and curiosity.
+            </p>
+        </section>
+
+        <section class="about__skills">
+            <div class="skill-card">
+                <h3>Product Design</h3>
+                <p>
+                    Designing innovative products that balance aesthetics and
+                    functionality, from concept to prototype.
+                </p>
+            </div>
+            <div class="skill-card">
+                <h3>Furniture Design</h3>
+                <p>
+                    Creating unique furniture pieces like the Aura Table,
+                    tailored to enhance living spaces.
+                </p>
+            </div>
+            <div class="skill-card">
+                <h3>Creative Direction</h3>
+                <p>
+                    Leading projects with a vision that ensures cohesive and
+                    impactful design outcomes.
+                </p>
+            </div>
+            <div class="skill-card">
+                <h3>Prototyping</h3>
+                <p>
+                    Building and testing prototypes to refine designs for
+                    real-world use.
+                </p>
+            </div>
+        </section>
+
+        <section class="about__cta">
+            <a href="/contact" class="cta-btn">Get in Touch</a>
+        </section>
+    </main>
+</BaseLayout>

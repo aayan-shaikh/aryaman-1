@@ -1,0 +1,353 @@
+SASS
+
+// _nav.scss - Reusable Navigation Component
+// ==========================================
+
+// Default variables (can be overridden)
+$nav-primary: #007bff !default;
+$nav-secondary: #ffffff !default;
+$nav-accent: #28a745 !default;
+$nav-text: #333333 !default;
+$nav-heading-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$nav-medium-weight: 500 !default;
+$nav-bold-weight: 600 !default;
+$nav-black-weight: 700 !default;
+
+// Hover color utility
+$nav-hover-color: darken($nav-primary, 10%);
+
+// Base navbar styles
+.navbar {
+    background-color: rgba($nav-secondary, 0.95);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        color: $nav-text;
+        font-family: $nav-heading-font;
+        font-weight: $nav-black-weight;
+        font-size: 1.8rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+
+        &-icon {
+            color: $nav-primary;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+
+            img {
+                border-radius: 4px;
+                transition: transform 0.3s ease;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &:hover &-icon {
+            transform: rotate(-15deg);
+        }
+
+        &:hover {
+            color: $nav-primary;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        &-link {
+            color: rgba($nav-text, 0.9);
+            text-decoration: none;
+            font-family: $nav-heading-font;
+            font-weight: $nav-medium-weight;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $nav-primary;
+                transition: width 0.3s ease;
+            }
+
+            &:hover {
+                color: $nav-text;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                color: lighten($nav-primary, 20%);
+                font-weight: $nav-bold-weight;
+
+                &::after {
+                    width: 100%;
+                    background: $nav-accent;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        .nav-btn {
+            background: linear-gradient(135deg, $nav-primary, darken($nav-primary, 10%));
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: $nav-medium-weight;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: $nav-heading-font;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba($nav-primary, 0.2);
+
+            &:hover {
+                background: linear-gradient(135deg, darken($nav-primary, 5%), darken($nav-primary, 15%));
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba($nav-primary, 0.3);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+        margin-left: auto;
+
+        &-line {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: $nav-text;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            margin-left: auto;
+            transform-origin: center;
+        }
+
+        &.active &-line:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        &.active &-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active &-line:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+
+    // Scrolled state
+    &.scrolled {
+        background-color: rgba(darken($nav-secondary, 5%), 0.98);
+        padding: 0.5rem 0;
+
+        .navbar__logo {
+            font-size: 1.6rem;
+        }
+    }
+
+    // Mobile styles
+    @media (max-width: 992px) {
+        &__menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: $nav-secondary;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+
+            &.active {
+                right: 0;
+            }
+        }
+
+        &__hamburger {
+            display: block;
+        }
+
+        &__cta {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__container {
+            padding: 1rem;
+        }
+
+        &__logo {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// Overlay for mobile menu
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+___________________________________________________________________________
+
+
+
+<!-- Navigation Component -->
+<!-- Customize the links, logo, and brand name for your project -->
+<nav class="navbar">
+    <div class="navbar__container">
+        <!-- Logo Section -->
+        <a href="/" class="navbar__logo">
+            <span class="navbar__logo-icon">
+                <img src="./assets/logo.png" width="50" height="50" alt="Your Brand Logo">
+            </span>
+            Your Brand
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="navbar__menu">
+            <li><a href="/" class="navbar__menu-link active">Home</a></li>
+            <li><a href="./services.html" class="navbar__menu-link">Services</a></li>
+            <li><a href="./portfolio.html" class="navbar__menu-link">Portfolio</a></li>
+            <li><a href="./about.html" class="navbar__menu-link">About</a></li>
+            <li><a href="./contact.html" class="navbar__menu-link">Contact</a></li>
+        </ul>
+
+        <!-- Call-to-Action Button -->
+        <div class="navbar__cta">
+            <a href="./contact.html">
+                <button class="nav-btn">Get Started</button>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar__hamburger" aria-label="Toggle navigation menu">
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="overlay" aria-hidden="true"></div>
+
+<!-- JavaScript for Navigation Functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.navbar__hamburger');
+    const menu = document.querySelector('.navbar__menu');
+    const overlay = document.getElementById('overlay');
+    const navbar = document.querySelector('.navbar');
+    
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Close menu when clicking menu links
+    document.querySelectorAll('.navbar__menu-link').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Scroll effect for navbar
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Set active link based on current page
+    const currentPage = window.location.pathname;
+    document.querySelectorAll('.navbar__menu-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentPage || 
+            (currentPage === '/' && link.getAttribute('href') === '/')) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>

@@ -1,0 +1,57 @@
+---
+import { img } from "astro:assets";
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import mw1 from "../../assets/images-avif/MnW 1.0/Artboard 5-100.avif";
+import mw2 from "../../assets/images-avif/MnW 1.0/Artboard 4-100.avif";
+import mw3 from "../../assets/images-avif/MnW 1.0/Artboard 3-100.avif";
+import mw4 from "../../assets/images-avif/MnW 1.0/Final 1.0.avif";
+import { img } from "astro:assets";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">M&W signages</p>
+        <h1 class="project__title">M&W 1.0</h1>
+        <p class="project__description">
+            The first of a series of washroom signages.
+        </p>
+
+        <div class="project__side-container">
+            <img class="project__image-1" src={mw1.src} alt="Alt" />
+            <div class="info-block">
+                <p>
+                    "This signage concept humorously conveys a visual
+                    distinction between toilet usage habits typically associated
+                    with women and men:
+
+                    <div class="card">
+                        Left side ("W"): The toilet seat is down, suggesting how
+                        women generally leave (or expect) the toilet seat to be
+                        — down and ready to sit on.
+                    </div>
+                    <div class="card">
+                        Right side ("M"): Both the seat and lid are up, which is
+                        commonly associated with how men leave the toilet after
+                        standing up to urinate.
+                    </div>
+
+                    <p>
+                        The visual acts as a lighthearted commentary on a common
+                        household debate or cultural difference regarding toilet
+                        seat etiquette between genders." -ChatGPT
+                    </p>
+                </p>
+            </div>
+        </div>
+        <img class="project__image-1" src={mw2.src} alt="Alt" />
+
+        <img class="project__image-1" src={mw3.src} alt="Alt" />
+
+        <img class="project__image-1" src={mw4.src} alt="Alt" />
+    </div>
+</BaseProjectLayout>
+<style>
+    .card:nth-child(3n) {
+        margin-left: auto;
+    }
+</style>

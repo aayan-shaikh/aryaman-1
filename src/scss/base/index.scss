@@ -1,0 +1,14 @@
+@use '../variables' as *;
+
+@forward 'reset';
+@forward 'typography';
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+
+$accent-font: 'Playwrite HU', sans-serif;
+
+body {
+    font-family: 'Montserrat';
+    background-color: $primary;
+    color: $charcoal;
+
+}

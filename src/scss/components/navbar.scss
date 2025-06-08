@@ -1,0 +1,398 @@
+@use '../variables/' as *;
+@use '../base/' as *;
+
+// Default variables (unchanged)
+$nav-primary: $primary;
+$nav-secondary: $secondary;
+$nav-accent: #D4A574;
+$nav-text: #2D2D2D;
+$nav-heading-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$nav-medium-weight: 500 !default;
+$nav-bold-weight: 600 !default;
+$nav-black-weight: 700 !default;
+$nav-hover-color: darken($nav-primary, 10%);
+
+// Base navbar styles
+.navbar {
+    background-color: rgba($nav-secondary, 0.95);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, padding 0.2s ease; // Specific properties
+    will-change: background-color, padding; // Optimize for scrolled state
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center !important;
+    }
+
+    &__logo {
+        color: $nav-text;
+        font-family: $nav-heading-font;
+        font-weight: $nav-black-weight;
+        font-size: 1.8rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s ease; // Specific property
+        will-change: color; // Optimize hover
+
+        &-icon {
+            color: $nav-primary;
+            transition: transform 0.2s ease; // Faster, specific
+            display: flex;
+            align-items: center;
+            will-change: transform; // GPU acceleration
+
+            img {
+                border-radius: 4px;
+                transition: transform 0.2s ease;
+                will-change: transform;
+            }
+
+            @media (max-width: 768px) {
+                // display: none;
+            }
+        }
+
+        &:hover &-icon {
+            transform: rotate(-15deg);
+        }
+
+        &:hover {
+            color: $nav-primary;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        &-link {
+            color: rgba($nav-text, 0.9);
+            text-decoration: none;
+            font-family: $nav-heading-font;
+            font-weight: $nav-medium-weight;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.2s ease; // Specific, faster
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            will-change: color; // Optimize hover
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $nav-accent;
+                transition: width 0.2s ease; // Faster
+                will-change: width; // Optimize underline animation
+            }
+
+            &:hover {
+                color: $nav-text;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                color: $nav-text;
+                font-weight: $nav-bold-weight;
+
+                &::after {
+                    width: 100%;
+                    background: $nav-accent;
+                }
+            }
+
+            &.has-dropdown::after {
+                content: "▼";
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                font-size: 0.8rem;
+                transition: transform 0.2s ease; // Faster
+                will-change: transform; // Optimize arrow rotation
+            }
+        }
+    }
+
+    &__dropdown {
+        position: relative;
+
+        &:hover .navbar__submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        &:hover .navbar__menu-link.has-dropdown::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: $nav-secondary;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin: 0;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.2s ease, transform 0.2s ease; // Specific, faster
+        will-change: opacity, transform; // GPU acceleration
+        z-index: 1001;
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: rgba($nav-text, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: $nav-medium-weight;
+            transition: color 0.2s ease, background 0.2s ease, padding-left 0.2s ease, border-left-color 0.2s ease; // Specific
+            border-left: 3px solid transparent;
+            will-change: color, background, padding-left, border-left-color; // Optimize hover
+
+            &:hover {
+                background: rgba($nav-primary, 0.1);
+                color: $nav-text;
+                border-left-color: $nav-primary;
+                padding-left: 1.7rem;
+            }
+        }
+    }
+
+    &__cta {
+        .nav-btn {
+            background: linear-gradient(135deg, $nav-accent, darken($nav-accent, 10%));
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: $nav-medium-weight;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; // Specific, faster
+            font-family: $nav-heading-font;
+            text-decoration: none;
+            display: inline-block;
+            transform: translateY(0);
+            will-change: transform, box-shadow; // GPU acceleration
+            box-shadow: 0 2px 4px rgba($nav-primary, 0.2);
+
+            &:hover {
+                background: linear-gradient(135deg, darken($nav-accent, 5%), darken($nav-accent, 15%));
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba($nav-accent, 0.6);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+        margin-left: auto;
+
+        &-line {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: $nav-text;
+            margin: 5px 0;
+            transition: transform 0.2s ease, opacity 0.2s ease; // Specific, faster
+            margin-left: auto;
+            transform-origin: center;
+            will-change: transform, opacity; // GPU acceleration
+        }
+
+        &.active &-line:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        &.active &-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active &-line:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+
+    &.scrolled {
+        background-color: rgba(darken($nav-secondary, 5%), 0.98);
+        padding: 0.5rem 0;
+
+        .navbar__logo {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        &__menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: $nav-secondary;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            transition: right 0.3s ease-in-out; // Keep timing for smooth slide
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            will-change: right; // Optimize slide animation
+
+            &.active {
+                right: 0;
+            }
+
+            .currently-active {
+                color: $charcoal !important;
+                border-bottom: 1px solid $nav-accent;
+            }
+        }
+
+        &__dropdown {
+            width: 100%;
+            text-align: center;
+
+            &:hover .navbar__submenu {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+            }
+
+            .navbar__menu-link.has-dropdown {
+                justify-content: center;
+                white-space: nowrap;
+
+                &::after {
+                    content: "▼";
+                    font-size: 0.8rem;
+                    margin-left: 0.4rem;
+                    transition: transform 0.2s ease;
+                    display: inline;
+                    will-change: transform; // Optimize arrow
+                }
+            }
+
+            &.active .navbar__menu-link.has-dropdown::after {
+                transform: rotate(180deg);
+            }
+
+            &.active .navbar__submenu {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+                max-height: fit-content;
+            }
+        }
+
+        &__submenu {
+            position: absolute;
+            margin-left: 3rem;
+            display: block;
+            box-shadow: none;
+            background: rgba($accent, 1);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transform: none;
+            transition: max-height 0.2s ease, opacity 0.2s ease; // Faster
+            will-change: max-height, opacity; // Optimize mobile dropdown
+
+            a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                border-left: none;
+                font-weight: 600;
+                transition: background 0.2s ease, padding-left 0.2s ease; // Specific
+                will-change: background, padding-left;
+
+                &:hover {
+                    background: rgba($nav-primary, 0.2);
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+        &__hamburger {
+            display: block;
+        }
+
+        &__cta {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__container {
+            padding: 1rem;
+        }
+
+        &__logo {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease; // Faster
+    will-change: opacity; // Optimize overlay fade
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

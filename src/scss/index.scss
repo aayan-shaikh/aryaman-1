@@ -1,0 +1,183 @@
+@use 'variables' as *;
+@use 'base' as *;
+@use 'components' as *;
+
+.body {
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.radial-menu {
+    margin: 10rem auto;
+    transform: scale(1.2);
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    animation: orbit 30s linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: fit-content;
+
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #8B4513;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-item span {
+    display: inline-block;
+}
+
+/* Hover effect */
+.menu-item:hover {
+    color: #696a6a;
+}
+
+.menu-item:hover span {
+    transform: scale(1.1);
+}
+
+span {
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+/* Positioning and initial rotation for each menu item */
+.menu-item:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-150px);
+
+
+    span {
+        transform: rotate(-90deg);
+
+        margin-bottom: 2rem;
+
+
+
+        /* 0° position: vertically upward */
+    }
+}
+
+.menu-item:nth-child(2) {
+    transform: translate(-50%, -50%) translate(106px, -106px);
+
+
+    span {
+        transform: rotate(-45deg);
+        margin-bottom: 2rem;
+        /* 45° position */
+        margin-left: 2rem;
+    }
+}
+
+.menu-item:nth-child(3) {
+    transform: translate(-50%, -50%) translateX(150px);
+
+
+    span {
+        transform: rotate(0deg);
+        margin-left: 2rem;
+        margin-top: 2rem;
+        /* 90° position: horizontal */
+    }
+}
+
+.menu-item:nth-child(4) {
+    transform: translate(-50%, -50%) translate(106px, 106px);
+
+
+    span {
+        transform: rotate(45deg);
+        margin-top: 2rem;
+        margin-left: 2rem;
+        /* 135° position */
+    }
+}
+
+.menu-item:nth-child(5) {
+    transform: translate(-50%, -50%) translateY(150px);
+
+
+    span {
+        transform: rotate(90deg);
+        margin-top: 2rem;
+        /* 180° position: vertically downward */
+    }
+}
+
+.menu-item:nth-child(6) {
+    transform: translate(-50%, -50%) translate(-106px, 106px);
+
+
+    span {
+        transform: rotate(135deg);
+        /* 225° position */
+    }
+}
+
+.menu-item:nth-child(7) {
+    transform: translate(-50%, -50%) translateX(-150px);
+
+
+    span {
+        transform: rotate(180deg);
+        /* 270° position: upside-down */
+    }
+}
+
+.menu-item:nth-child(8) {
+    transform: translate(-50%, -50%) translate(-106px, -106px);
+
+
+    span {
+        transform: rotate(-135deg);
+        /* 315° position */
+    }
+}

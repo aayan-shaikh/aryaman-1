@@ -1,0 +1,268 @@
+---
+import "../../scss/index.scss";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&display=swap"
+            rel="stylesheet"
+        />
+        <title>ASK</title>
+    </head>
+
+    <body>
+        <header>
+            <!-- NAVBAR -->
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <!-- Logo Section -->
+                    <a href="/" class="navbar__logo">
+                        <span class="navbar__logo-icon">
+                            <img
+                                src="https://placehold.co/400"
+                                width="50"
+                                height="50"
+                                alt="Your Brand Logo"
+                            />
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul class="navbar__menu">
+                        <li>
+                            <a
+                                href="/"
+                                class="navbar__menu-link active currently-active"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/services/" class="navbar__menu-link"
+                                >Services</a
+                            >
+                        </li>
+                        <li class="navbar__dropdown">
+                            <span class="navbar__menu-link has-dropdown"
+                                >Projects</span
+                            >
+                            <ul class="navbar__submenu">
+                                <li>
+                                    <a href="/projects/mandw-1/">M&W 1.0</a>
+                                </li>
+                                <li>
+                                    <a href="/projects/mandw-2/">M&W 2.0</a>
+                                </li>
+                                <li>
+                                    <a href="/projects/life-calendar/"
+                                        >Life Calendar</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/projects/tyme/">Tyme</a>
+                                </li>
+                                <li>
+                                    <a href="/projects/oliva-olio/"
+                                        >Oliva Olio</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/projects/spaceman-cup/"
+                                        >Spaceman Cup</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/projects/aura-table/"
+                                        >Aura Table</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/about/" class="navbar__menu-link">About</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/contact/" class="navbar__menu-link"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+
+                    <!-- Call-to-Action Button -->
+                    <div class="navbar__cta">
+                        <a href="/contact/">
+                            <button class="nav-btn">Get in Touch</button>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        class="navbar__hamburger"
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span class="navbar__hamburger-line"></span>
+                        <span class="navbar__hamburger-line"></span>
+                        <span class="navbar__hamburger-line"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- Mobile Menu Overlay -->
+            <div id="overlay" aria-hidden="true"></div>
+            <!-- NAVBAR END -->
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <!-- FOOTER START -->
+        <footer class="footer">
+            <div class="footer-column">
+                <h3>ASK Designs</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="#">M&W 1.0</a></li>
+                    <li><a href="#">M&W 2.0</a></li>
+                    <li><a href="#">Oliva Olio</a></li>
+                    <li><a href="#">Space Man Cup</a></li>
+                    <li><a href="#">Tyme</a></li>
+                    <li><a href="#">Life Calendar</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Email: aryaman</p>
+                <p>Phone: +91 aryaman</p>
+            </div>
+        </footer>
+        <!-- FOOTER END -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hamburger = document.querySelector(".navbar__hamburger");
+                const menu = document.querySelector(".navbar__menu");
+                const overlay = document.getElementById("overlay");
+                const navbar = document.querySelector(".navbar");
+
+                // Mobile menu toggle
+                hamburger.addEventListener("click", function () {
+                    hamburger.classList.toggle("active");
+                    menu.classList.toggle("active");
+                    overlay.classList.toggle("active");
+                    document.body.style.overflow = menu.classList.contains(
+                        "active",
+                    )
+                        ? "hidden"
+                        : "";
+                });
+
+                // Mobile dropdown toggle (fixed to prevent navigation and menu closing)
+                document
+                    .querySelectorAll(".navbar__dropdown")
+                    .forEach((dropdown) => {
+                        const link = dropdown.querySelector(".has-dropdown");
+                        if (link) {
+                            link.addEventListener("click", function (e) {
+                                if (window.innerWidth <= 992) {
+                                    // e.preventDefault(); // Prevent navigation
+                                    e.stopPropagation(); // Prevent event bubbling
+                                    dropdown.classList.toggle("active");
+                                }
+                            });
+                        }
+                    });
+
+                // Prevent dropdown submenu clicks from closing main menu
+                document
+                    .querySelectorAll(".navbar__submenu a")
+                    .forEach((subLink) => {
+                        subLink.addEventListener("click", function (e) {
+                            // Allow normal navigation for submenu items
+                            // Don't prevent default - let them navigate normally
+                            if (window.innerWidth <= 992) {
+                                // Close mobile menu after submenu click
+                                setTimeout(() => {
+                                    hamburger.classList.remove("active");
+                                    menu.classList.remove("active");
+                                    overlay.classList.remove("active");
+                                    document.body.style.overflow = "";
+                                }, 100);
+                            }
+                        });
+                    });
+
+                // Close menu when clicking overlay
+                overlay.addEventListener("click", function () {
+                    hamburger.classList.remove("active");
+                    menu.classList.remove("active");
+                    overlay.classList.remove("active");
+                    document.body.style.overflow = "";
+                });
+
+                // Close menu when clicking menu links (but not dropdown toggles)
+                document
+                    .querySelectorAll(".navbar__menu-link:not(.has-dropdown)")
+                    .forEach((link) => {
+                        link.addEventListener("click", function () {
+                            if (window.innerWidth <= 992) {
+                                hamburger.classList.remove("active");
+                                menu.classList.remove("active");
+                                overlay.classList.remove("active");
+                                document.body.style.overflow = "";
+                            }
+                        });
+                    });
+
+                // Scroll effect for navbar
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY > 100) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                });
+
+                // Set active link based on current page
+                const currentPage = window.location.pathname;
+                document
+                    .querySelectorAll(".navbar__menu-link")
+                    .forEach((link) => {
+                        link.classList.remove("active");
+                        if (
+                            link.getAttribute("href") === currentPage ||
+                            (currentPage === "/" &&
+                                link.getAttribute("href") === "/")
+                        ) {
+                            link.classList.add("active");
+                        }
+                    });
+            });
+        </script>
+    </body>
+</html>

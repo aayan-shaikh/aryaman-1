@@ -1,0 +1,67 @@
+---
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import { img } from "astro:assets";
+import oo1 from "../../assets/images-avif/Oliva Olio/sketch.avif";
+import oo2 from "../../assets/images-avif/Oliva Olio/2.compressed.avif";
+import oo3 from "../../assets/images-avif/Oliva Olio/Edited image brev-2.avif";
+import oo4 from "../../assets/images-avif/Oliva Olio/Edited image brev-3.avif";
+import oo5 from "../../assets/images-avif/Oliva Olio/Edited image brev-5.avif";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">Some class glass.</p>
+
+        <h1 class="project__title">Oliva Olio</h1>
+        <p class="project__description">Aesthetic cooking oil dispensers.</p>
+
+        <div class="project__side-container">
+            <img
+                class="project__image-1"
+                src={oo1.src}
+                alt="Sketch of Oliva Olio"
+            />
+            <div class="info-block">
+                <p>
+                    The idea is to have the seeds/nuts the oil is extracted from
+                    to be displayed with the oil.
+                    <br />
+                    The oil holder simply lifts off of the glass base when used,
+                    and creates an experience like no other.
+                </p>
+            </div>
+            <img
+                class="project__image-1"
+                src={oo2.src}
+                alt="Sketch of Oliva Olio"
+            />
+        </div>
+        <img
+            class="project__image-1"
+            src={oo3.src}
+            alt="Sketch of Oliva Olio"
+        />
+        <div class="info-block">
+            <p class="card">
+                I would've loved to make versions with sunflower seeds,
+                groundnuts, and small pieces of coconut.
+            </p>
+        </div>
+        <img
+            class="project__image-1"
+            src={oo4.src}
+            alt="Sketch of Oliva Olio"
+        />
+        <div class="info-block">
+            <p>
+                An entire collection of different oils in these containers atop
+                a kitchen countertop will be a reality soon.
+            </p>
+        </div>
+        <img
+            class="project__image-1"
+            src={oo5.src}
+            alt="Sketch of Oliva Olio"
+        />
+    </div>
+</BaseProjectLayout>

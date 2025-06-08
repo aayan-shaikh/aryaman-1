@@ -1,0 +1,48 @@
+@use '../variables/' as *;
+@use '../components' as *;
+@use '../base/' as *;
+
+.content-grid {
+
+    padding-top: 12rem;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: [full-width-start] 1rem [breakout-start] 1rem [content-start] 1fr [content-end] 1rem [breakout-end] 1rem [full-width-end];
+    margin-bottom: 6rem;
+}
+
+.content-grid>* {
+    grid-column: content;
+}
+
+.contact__description {
+    margin-bottom: 2rem;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+
+    input,
+    textarea {
+        font-family: inherit;
+        padding: 1rem 2rem;
+        background: $secondary;
+        border: 1px solid $accent-gold;
+        border-radius: 5px;
+    }
+
+    label {
+
+
+        color: $charcoal;
+        margin-bottom: -15px;
+    }
+
+    button {
+        font-family: inherit;
+    }
+}

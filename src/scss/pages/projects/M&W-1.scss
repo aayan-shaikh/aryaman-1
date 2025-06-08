@@ -1,0 +1,123 @@
+@use '../../variables/' as *;
+@use '../../components' as *;
+@use '../../base/' as *;
+
+
+
+
+main {
+    // font-size: clamp(1rem, -0.4286rem + 4.5714vw, 3rem) !important;
+    padding-inline: 0.5rem;
+    // max-width: 60ch;
+    margin-inline: auto;
+    // min-width: 100%;
+}
+
+img {
+    border-radius: 5px;
+
+}
+
+.project {
+
+    &__container {
+        padding-inline: 2rem;
+
+
+    }
+
+    &__title,
+    &__topper,
+    &__description {
+        // text-transform: capitalize;
+
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+
+    }
+
+    &__title {
+        font-size: $h1-font-size;
+        line-height: 0.8;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+
+
+    }
+
+    &__topper {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-top: 4rem;
+        margin-bottom: 0.5rem;
+
+
+    }
+
+    &__description {
+
+        line-height: 1;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+
+    }
+
+    &__side-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-direction: column;
+
+
+        @media screen and (min-width: 768) {}
+
+        img {
+            border-radius: 5px;
+
+        }
+
+        .project__image-1 {
+            min-width: 60%;
+            margin-bottom: 0.6rem;
+            object-fit: scale-down;
+        }
+
+
+    }
+
+
+
+    &__image-2 {
+        margin-top: 2rem;
+    }
+
+    &__image-3 {
+        margin-top: 1rem;
+        object-fit: scale-down;
+        min-width: 100%;
+    }
+
+    &__image-4 {}
+
+
+}
+
+.card {
+
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1.6rem 0;
+    width: 80%;
+    font-weight: 300;
+    font-size: 1rem;
+    // MAKE SLIGHTLY SMALLER
+    box-shadow: 5px 8px 0 darken($accent, 10%);
+}
+
+.card:nth-child(3n) {
+    // background-color: $soft-beige;
+    margin-left: auto;
+}

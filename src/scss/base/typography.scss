@@ -1,0 +1,134 @@
+// ===== FONT SCALING =====
+// Select the min and max screen sizes you are working with
+$screen-min-width: 30;
+$screen-max-width: 120;
+
+// Select the min and max font-sizes for each header type
+$h1-min-size: 3.0;
+$h1-max-size: 9.0;
+$h2-min-size: 2.0;
+$h2-max-size: 6.0;
+$h3-min-size: 3.0;
+$h3-max-size: 5.0;
+$h4-min-size: 3.0;
+$h4-max-size: 6.0;
+
+// Select the min and max font-sizes for body text types
+$body-min-size: 1.0;
+$body-max-size: 1.25;
+$small-min-size: 0.875;
+$small-max-size: 1.0;
+$large-min-size: 1.125;
+$large-max-size: 1.5;
+$lead-min-size: 1.25;
+$lead-max-size: 1.75;
+
+// FONT SCALING CALCULATIONS - DON'T NEED TO EDIT
+// Header calculations
+$h1-slope: calc(($h1-max-size - $h1-min-size) / ($screen-max-width - $screen-min-width));
+$h2-slope: calc(($h2-max-size - $h2-min-size) / ($screen-max-width - $screen-min-width));
+$h3-slope: calc(($h3-max-size - $h3-min-size) / ($screen-max-width - $screen-min-width));
+$h4-slope: calc(($h4-max-size - $h4-min-size) / ($screen-max-width - $screen-min-width));
+
+// Body text calculations
+$body-slope: calc(($body-max-size - $body-min-size) / ($screen-max-width - $screen-min-width));
+$small-slope: calc(($small-max-size - $small-min-size) / ($screen-max-width - $screen-min-width));
+$large-slope: calc(($large-max-size - $large-min-size) / ($screen-max-width - $screen-min-width));
+$lead-slope: calc(($lead-max-size - $lead-min-size) / ($screen-max-width - $screen-min-width));
+
+// Header intersections
+$h1-intersection: calc((-1 * $screen-min-width * $h1-slope) + $h1-min-size);
+$h2-intersection: calc((-1 * $screen-min-width * $h2-slope) + $h2-min-size);
+$h3-intersection: calc((-1 * $screen-min-width * $h3-slope) + $h3-min-size);
+$h4-intersection: calc((-1 * $screen-min-width * $h4-slope) + $h4-min-size);
+
+// Body text intersections
+$body-intersection: calc((-1 * $screen-min-width * $body-slope) + $body-min-size);
+$small-intersection: calc((-1 * $screen-min-width * $small-slope) + $small-min-size);
+$large-intersection: calc((-1 * $screen-min-width * $large-slope) + $large-min-size);
+$lead-intersection: calc((-1 * $screen-min-width * $lead-slope) + $lead-min-size);
+
+// Header preferred values
+$h1-preferred: calc($h1-intersection + ($h1-slope * 100));
+$h2-preferred: calc($h2-intersection + ($h2-slope * 100));
+$h3-preferred: calc($h3-intersection + ($h3-slope * 100));
+$h4-preferred: calc($h4-intersection + ($h4-slope * 100));
+
+// Body text preferred values
+$body-preferred: calc($body-intersection + ($body-slope * 100));
+$small-preferred: calc($small-intersection + ($small-slope * 100));
+$large-preferred: calc($large-intersection + ($large-slope * 100));
+$lead-preferred: calc($lead-intersection + ($lead-slope * 100));
+
+// Header min/mid/max values
+$h1-min: calc($h1-min-size * 1rem);
+$h1-mid: calc($h1-preferred * 1vw);
+$h1-max: calc($h1-max-size * 1rem);
+$h2-min: calc($h2-min-size * 1rem);
+$h2-mid: calc($h2-preferred * 1vw);
+$h2-max: calc($h2-max-size * 1rem);
+$h3-min: calc($h3-min-size * 1rem);
+$h3-mid: calc($h3-preferred * 1vw);
+$h3-max: calc($h3-max-size * 1rem);
+$h4-min: calc($h4-min-size * 1rem);
+$h4-mid: calc($h4-preferred * 1vw);
+$h4-max: calc($h4-max-size * 1rem);
+
+// Body text min/mid/max values
+$body-min: calc($body-min-size * 1rem);
+$body-mid: calc($body-preferred * 1vw);
+$body-max: calc($body-max-size * 1rem);
+$small-min: calc($small-min-size * 1rem);
+$small-mid: calc($small-preferred * 1vw);
+$small-max: calc($small-max-size * 1rem);
+$large-min: calc($large-min-size * 1rem);
+$large-mid: calc($large-preferred * 1vw);
+$large-max: calc($large-max-size * 1rem);
+$lead-min: calc($lead-min-size * 1rem);
+$lead-mid: calc($lead-preferred * 1vw);
+$lead-max: calc($lead-max-size * 1rem);
+
+// Final font-size variables
+$h1-font-size: clamp($h1-min, $h1-mid, $h1-max);
+$h2-font-size: clamp($h2-min, $h2-mid, $h2-max);
+$h3-font-size: clamp($h3-min, $h3-mid, $h3-max);
+$h4-font-size: clamp($h4-min, $h4-mid, $h4-max);
+$body-font-size: clamp($body-min, $body-mid, $body-max);
+$small-font-size: clamp($small-min, $small-mid, $small-max);
+$large-font-size: clamp($large-min, $large-mid, $large-max);
+$lead-font-size: clamp($lead-min, $lead-mid, $lead-max);
+
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+body,
+p {
+    font-size: $body-font-size;
+}
+
+.text-small,
+small {
+    font-size: $small-font-size;
+}
+
+.text-large {
+    font-size: $large-font-size;
+}
+
+.lead {
+    font-size: $lead-font-size;
+}

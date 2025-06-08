@@ -1,0 +1,55 @@
+---
+import { img } from "astro:assets";
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import lc1 from "../../assets/images-avif/Life Calendar/IMG_0981.avif";
+import lc2 from "../../assets/images-avif/Life Calendar/Mockup 1.0.avif";
+import lc3 from "../../assets/images-avif/Life Calendar/Final The Calendar_page-0001 (1).avif";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid">
+        <h1 class="project__title">My Life Calendar</h1>
+        <p class="project__description">
+            My time remaining alive, in one quick glance.
+        </p>
+
+        <div class="project__side-container">
+            <img class="project__image-1" src={lc1.src} alt="Alt" />
+
+            <p>
+                The Calendar app lets one "zoom out" and see any year at a
+                glance. This got me pondering how short a year really is. We
+                make it out to be this grand, unending affair, but it's really
+                just as many days as there are numbers displayed on this small
+                little black screen.
+            </p>
+        </div>
+        <div class="card">
+            It all began while using an iPhone for the first time.
+        </div>
+        <img class="project__image-1" src={lc2.src} alt="Alt" />
+
+        <div class="info-block">
+            <p>
+                Naturally, the next step was to screenshot the next
+                three-quarters of the current century (my optimistic life
+                expectancy) and stitch them all together. Having printed this
+                out on an A2 sheet (who knew using black as the background color
+                would result in a ‘wet’ printed sheet) and put it up on my wall,
+                it now lets me have quiet moments with my own mortality.
+                Somewhere among these numbers lies a date on which I will lose
+                people dear to me, get married, and, if the universe wills it,
+                die. They're all right in front of me—each and every day going
+                forward.
+            </p>
+        </div>
+        <div class="card">
+            I hope more people print out this PDF and glance at it from time to
+            time—and <em
+                >I do believe this might be my first true piece of art.</em
+            >
+        </div>
+        <img class="project__image-1" src={lc3.src} alt="Alt" />
+    </div>
+</BaseProjectLayout>
+<style></style>

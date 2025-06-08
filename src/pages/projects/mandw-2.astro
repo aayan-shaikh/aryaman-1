@@ -1,0 +1,37 @@
+---
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import { img } from "astro:assets";
+import mw21 from "../../assets/images-avif/MnW 2.0/2.0.avif";
+import mw22 from "../../assets/images-avif/MnW 2.0/left.avif";
+import mw23 from "../../assets/images-avif/MnW 2.0/right.avif";
+import mw24 from "../../assets/images-avif/MnW 2.0/Final.avif";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">M&W signages</p>
+        <h1 class="project__title">M&W 2.0</h1>
+        <p class="project__description">
+            The second of a series of washroom signages.
+        </p>
+
+        <div class="project__side-container">
+            <img class="project__image-1" src={mw21.src} alt="Alt" />
+
+            <div class="info-block">
+                <p>
+                    Let the confusion begin.
+
+                    <div class="card">
+                        PS. Having the urinal door appear before the other one
+                        when entering the restroom area is ideal for the design
+                        to function at its best.
+                    </div>
+                </p>
+            </div>
+        </div>
+        <img class="project__image-1" src={mw23.src} alt="Alt" />
+        <img class="project__image-1" src={mw22.src} alt="Alt" />
+        <img class="project__image-1" src={mw24.src} alt="Alt" />
+    </div>
+</BaseProjectLayout>

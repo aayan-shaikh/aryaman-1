@@ -1,0 +1,7 @@
+@mixin check {
+    outline: 3px dotted lime;
+}
+
+@mixin body-text {
+    font-size: large;
+}

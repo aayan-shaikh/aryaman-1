@@ -1,0 +1,132 @@
+<header>
+    <nav>
+        <div class="nav__logo">
+            <h1>ASK</h1>
+        </div>
+        <div class="nav__links">
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+<script src="scripts/navbar.js">
+    const hamburger = document.querySelector('.hamburger');
+const nav__links = document.querySelector('.nav__links');
+hamburger.addEventListener("click", showMobileMenu);
+
+function showMobileMenu() {
+    hamburger.classList.toggle("active");
+    nav__links.classList.toggle("active");
+}
+</script>
+
+
+STYLES
+
+@use '../variables/' as *;
+
+
+nav {
+    background-color: $accent;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    min-height: 10vh;
+
+    .nav__links {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+            text-transform: uppercase;
+            letter-spacing: 0.01rem;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 0px solid $accent;
+
+            &:hover {
+                border-bottom: 10px solid darken($accent, 10%);
+            }
+        }
+    }
+
+
+}
+
+.hamburger {
+    display: none;
+
+    .bar {
+        display: block;
+        width: 50px;
+        height: 5px;
+        margin: 10px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: $charcoal;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        padding-inline: 3rem;
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(22px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .hamburger {
+            display: inline;
+            cursor: pointer;
+            will-change: opacity;
+
+
+
+        }
+
+        .nav__links {
+
+            will-change: transform;
+            font-size: 1.5rem;
+            position: fixed;
+            left: 0;
+            transform: translateX(250%);
+            top: 5rem;
+            padding-left: 4rem;
+            padding-top: 4rem;
+
+            flex-direction: column;
+            background-image: linear-gradient(to bottom right, $accent, darken($accent, 10%));
+            height: 100vh;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav__links.active {
+            transform: translateX(30%);
+            // left: 10%;
+            padding-top: 4rem;
+            padding-left: 4rem;
+            top: 5rem;
+
+            font-size: 1.5rem;
+            height: 100vh;
+            background-image: linear-gradient(to bottom right, $accent, darken($accent, 10%));
+            width: 100vw;
+        }
+    }
+}

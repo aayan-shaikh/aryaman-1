@@ -1,0 +1,22 @@
+@use '../../variables/' as *;
+@use '../../components' as *;
+@use '../../base/' as *;
+
+
+.card {
+
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1.6rem 0;
+    width: 80%;
+    font-weight: 300;
+    font-size: 1rem;
+    // MAKE SLIGHTLY SMALLER
+    box-shadow: 5px 8px 0 darken($accent, 10%);
+}
+
+.card:nth-child(3n) {
+    // background-color: $soft-beige;
+    margin-left: auto;
+}

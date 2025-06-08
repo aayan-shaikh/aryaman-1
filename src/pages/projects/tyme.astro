@@ -1,0 +1,48 @@
+---
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import { img } from "astro:assets";
+import tyeme1 from "../../assets/images/Tyeme/Tyeme video Final_Trim.mp4";
+import tyeme2 from "../../assets/images-avif/Tyeme/2.164.avif";
+import tyeme3 from "../../assets/images-avif/Tyeme/close up.173.avif";
+import tyeme4 from "../../assets/images-avif/Tyeme/close up.175.avif";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">Horology</p>
+
+        <h1 class="project__title">Tyeme</h1>
+        <p class="project__description">My first horology concept</p>
+
+        <div class="project__side-container">
+            <video controls muted autoplay loop>
+                <source src={tyeme1} type="video/mp4" />
+            </video>
+            <div class="info-block">
+                <p>
+                    The Casio on my workstation did it's job well but wasn't
+                    very inspiring or interesting. This idea, I hope, manages to
+                    improve on that.
+                </p>
+            </div>
+        </div>
+        <img class="project__image-1" src={tyeme2.src} alt="Tyeme video" />
+
+        <div class="info-block">
+            <p>
+                An insomniac-friendly version was a must-have, so here it is, in
+                all its late-night glory.
+                <br />
+
+                The hands are dipped in phosphorescent paint that helps in
+                reading the time at all times (pun intended).
+            </p>
+        </div>
+        <img class="project__image-1" src={tyeme3.src} alt="Tyeme video" />
+
+        <div class="info-block">
+            <p>About damn tyeme.</p>
+        </div>
+        <img class="project__image-1" src={tyeme4.src} alt="Tyeme video" />
+    </div>
+</BaseProjectLayout>

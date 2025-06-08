@@ -1,0 +1,54 @@
+---
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import { img } from "astro:assets";
+import ss1 from "../../assets/images-avif/Spaceman Cup/F1.avif";
+import ss2 from "../../assets/images-avif/Spaceman Cup/F2.avif";
+import ss3 from "../../assets/images-avif/Spaceman Cup/f3.avif";
+import ss4 from "../../assets/images-avif/Spaceman Cup/f4.avif";
+import ss5 from "../../assets/images-avif/Spaceman Cup/moon2.avif";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">Some class glass.</p>
+
+        <h1 class="project__title">Spaceman Cup</h1>
+        <p class="project__description">The coolest cup you'll come across.</p>
+
+        <img
+            src={ss1.src}
+            alt="Spaceman Cup"
+            class="project__image-1 full-width hard-shadow"
+        />
+
+        <div class="info-block">
+            <p>
+                A cup created with playfulness in mind, the Spaceman cup aims to
+                turn its surroundings more interesting with its presence.
+                <br />
+                At its very core, it serves to draw inspiration from, on an everyday
+                basis.
+            </p>
+        </div>
+        <img src={ss2.src} alt="Spaceman Cup" class="project__image-1" />
+
+        <img src={ss3.src} alt="Spaceman Cup" class="project__image-1" />
+
+        <div class="info-block">
+            <p>
+                The cups have been designed with functionality in mind, with
+                indents along the handles that hold the cup above safely in
+                place.
+            </p>
+        </div>
+        <img src={ss4.src} alt="Spaceman Cup" class="project__image-1" />
+
+        <div class="info-block">
+            <p>
+                It breaks the very notion of a cup, creating a surreal sense of
+                levitation with stability.
+            </p>
+        </div>
+        <img src={ss5.src} alt="Spaceman Cup" class="project__image-1" />
+    </div>
+</BaseProjectLayout>

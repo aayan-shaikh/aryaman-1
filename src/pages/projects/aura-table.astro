@@ -1,0 +1,96 @@
+---
+import BaseProjectLayout from "../layouts/BaseProjectLayout.astro";
+import aura1 from "../../assets/images/Aura Table/animation 2.mp4";
+import aura2 from "../../assets/images-avif/Aura Table/Moodboard 1.avif";
+import aura3 from "../../assets/images-avif/Aura Table/Moodboard 2.avif";
+import aura4 from "../../assets/images-avif/Aura Table/Moodboard 3.avif";
+import aura5 from "../../assets/images-avif/Aura Table/re edit.avif";
+import aura6 from "../../assets/images-avif/Aura Table/upon raising 1.avif";
+import aura7 from "../../assets/images-avif/Aura Table/w logo 1.avif";
+import aura8 from "../../assets/images-avif/Aura Table/w logo 3.avif";
+import aura9 from "../../assets/images-avif/Aura Table/wood 1.avif";
+import aura10 from "../../assets/images-avif/Aura Table/wood 2.avif";
+import aura11 from "../../assets/images-avif/Aura Table/wood 3.avif";
+import { img } from "astro:assets";
+---
+
+<BaseProjectLayout>
+    <div class="content-grid project__container">
+        <p class="project__topper">Furniture</p>
+
+        <h1 class="project__title">Aura Table</h1>
+        <p class="project__description" '>One table does all.</p>
+
+        <div class="project__side-container">
+            <video muted autoplay loop playsinline>
+                <source src={aura1} type="video/mp4" />
+            </video>
+            <div class="info-block">
+                <p>
+                    A table that provides varying moods based on light alone.
+                    <br />
+                    The adjustable light bar when slightly raised offers ambient
+                    lighting perfect for a more casual vibe while hosting parties
+                    or late-night conversations.
+                </p>
+            </div>
+            <img
+                layout="constrained"
+                class="project__image-1"
+                src={aura2.src}
+                alt="Alt"
+            />
+        </div>
+        <div class="sidebyside">
+            <img class="project__image-1" src={aura3.src} alt="Alt" />
+
+            <img class="project__image-1" src={aura4.src} alt="Alt" />
+        </div>
+        <div class="info-block">
+            <p>
+                As the bar is raised higher, it provides a more functional
+                amount of light, turning the workspace into a well-lit area to
+                work on.
+            </p>
+        </div>
+        <img class="project__image-1" src={aura5.src} alt="Alt" />
+
+        <div class="info-block">
+            <p>
+                The inspiration for the Aura table was drawn from common study
+                areas in libraries, where lighting arrangements provide ample
+                downward light without being intrusive.
+            </p>
+        </div>
+        <img class="project__image-1" src={aura6.src} alt="Alt" />
+
+        <div class="info-block">
+            <p>
+                The table’s adjustable lighting system offers flexibility,
+                accommodating diverse range of situations.
+            </p>
+        </div>
+        <img class="project__image-1" src={aura7.src} alt="Alt" />
+
+        <img class="project__image-1" src={aura8.src} alt="Alt" />
+
+        <div class="sidebyside">
+            <img class="project__image-1" src={aura9.src} alt="Alt" />
+            <img class="project__image-1" src={aura10.src} alt="Alt" />
+        </div>
+        <div class="info-block">
+            <p>
+                A high-quality hardwood or engineered composite version for the
+                tabletop with integrated aluminum channels and concealed wiring
+                for the lighting.
+            </p>
+        </div>
+        <img class="project__image-1" src={aura11.src} alt="Alt" />
+
+        <!-- <img
+            class="project__image-9"
+            src="https://static.wixstatic.com/media/74e8a7_4197502068074b86831100c0deba9ffb~mv2.avif/v1/fill/w_720,h_720,al_c,lg_1,q_90,enc_avif,quality_auto/74e8a7_4197502068074b86831100c0deba9ffb~mv2.avif"
+            alt=""
+        /> -->
+    </div>
+</BaseProjectLayout>

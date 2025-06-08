@@ -1,0 +1,150 @@
+@use '../variables/' as *;
+@use '../components' as *;
+@use '../base/' as *;
+
+
+.about {
+    background-color: $secondary;
+    padding-bottom: 4rem;
+
+    &__hero {
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        img,
+        video {
+            grid-column: full-width;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+
+            @media screen and (min-width: 768px) {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+            }
+        }
+
+        &-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($charcoal, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $warm-white;
+            text-align: center;
+            padding: 2rem;
+
+            h1 {
+                font-size: $h1-font-size;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 0 2px 4px rgba($charcoal, 0.5);
+                transition: transform 0.2s ease;
+                will-change: transform;
+            }
+
+            p {
+                font-family: "Playwrite HU";
+                font-size: 1.2rem;
+                line-height: 1.4;
+                max-width: 40rem;
+                text-shadow: 0 1px 2px rgba($charcoal, 0.5);
+                transition: transform 0.2s ease;
+                will-change: transform;
+            }
+        }
+    }
+
+    &__intro {
+        grid-column: content;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        p {
+            font-family: "Playwrite HU";
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: $charcoal;
+            max-width: 40rem;
+            margin: 0 auto 1.5rem;
+
+            @media screen and (min-width: 768px) {
+                text-align: left;
+            }
+        }
+    }
+
+    &__skills {
+        grid-column: content;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .skill-card {
+            background: $warm-white;
+            border: 1px solid $light-gray;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 5px 8px 0 $accent-gold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform, box-shadow;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 5px 8px 0 darken($accent-gold, 10%);
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                color: $charcoal;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $warm-gray;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    &__cta {
+        grid-column: content;
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        .cta-btn {
+            background: linear-gradient(135deg, $accent-gold, darken($accent-gold, 10%));
+            color: $warm-white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform, box-shadow;
+            box-shadow: 0 2px 4px rgba($charcoal, 0.2);
+
+            &:hover {
+                background: linear-gradient(135deg, darken($accent-gold, 5%), darken($accent-gold, 15%));
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba($accent-gold, 0.6);
+            }
+        }
+    }
+}
