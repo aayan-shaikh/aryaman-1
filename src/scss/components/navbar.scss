@@ -387,12 +387,14 @@ $nav-hover-color: darken($nav-primary, 10%);
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease; // Faster
-    will-change: opacity; // Optimize overlay fade
+    pointer-events: none;
+    /* Prevents interaction when hidden */
+    transition: opacity 0.8s ease-in-out;
+    will-change: opacity;
 
     &.active {
         opacity: 1;
-        visibility: visible;
+        pointer-events: auto;
+        /* Allows interaction when visible */
     }
 }

@@ -5,65 +5,81 @@ import "../scss/pages/about.scss";
 ---
 
 <BaseLayout>
-    <main class="about content-grid">
+    <div class="about content-grid">
         <section class="about__hero">
-            <!-- <img
-                src={heroImage.src}
-                alt="About Hero"
-                class="full-width hard-shadow"
-                width="1200"
-                height="600"
-            /> -->
-            <div class="about__hero-overlay">
+            <div class="about__hero-content">
                 <h1>About Me</h1>
                 <p>Creating timeless designs that inspire and delight.</p>
             </div>
+            <img
+                src="https://placehold.co/500"
+                alt="
+                Designer
+                at
+                work"
+            />
         </section>
 
         <section class="about__intro">
+            <h2>My Story</h2>
             <p>
-                I'm a passionate designer with a focus on crafting unique,
-                functional products like the Spaceman Cup and Aura Table. My
-                work blends creativity with practicality, aiming to elevate
-                everyday experiences through thoughtful design. Based in [Your
-                Location], I draw inspiration from the world around me to create
-                pieces that spark joy and curiosity.
+                Aryaman Kaushik is a Graphic Designer, with his area of
+                expertise lying in Brand Identity, Digital Marketing & Print
+                Design. He has trained under reputable Italian designers &
+                teachers in Florence, Italy, and is currently based in Pune,
+                India.
             </p>
         </section>
 
         <section class="about__skills">
-            <div class="skill-card">
-                <h3>Product Design</h3>
-                <p>
-                    Designing innovative products that balance aesthetics and
-                    functionality, from concept to prototype.
-                </p>
-            </div>
-            <div class="skill-card">
-                <h3>Furniture Design</h3>
-                <p>
-                    Creating unique furniture pieces like the Aura Table,
-                    tailored to enhance living spaces.
-                </p>
-            </div>
-            <div class="skill-card">
-                <h3>Creative Direction</h3>
-                <p>
-                    Leading projects with a vision that ensures cohesive and
-                    impactful design outcomes.
-                </p>
-            </div>
-            <div class="skill-card">
-                <h3>Prototyping</h3>
-                <p>
-                    Building and testing prototypes to refine designs for
-                    real-world use.
-                </p>
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Product Design</h3>
+                    <p>
+                        Designing innovative products that balance aesthetics
+                        and functionality, from concept to prototype.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>Furniture Design</h3>
+                    <p>
+                        Creating unique furniture pieces like the Aura Table,
+                        tailored to enhance living spaces.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>Creative Direction</h3>
+                    <p>
+                        Leading projects with a vision that ensures cohesive and
+                        impactful design outcomes.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>Prototyping</h3>
+                    <p>
+                        Building and testing prototypes to refine designs for
+                        real-world use.
+                    </p>
+                </div>
             </div>
         </section>
 
         <section class="about__cta">
+            <h2>Let's Collaborate</h2>
             <a href="/contact" class="cta-btn">Get in Touch</a>
         </section>
-    </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(
+                ".about__hero-content, .skill-card, .cta-btn",
+            );
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add("animate-in");
+                }, index * 150);
+            });
+        });
+    </script>
 </BaseLayout>

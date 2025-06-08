@@ -2,121 +2,162 @@
 @use '../components' as *;
 @use '../base/' as *;
 
-
 .about {
     background-color: $secondary;
     padding-bottom: 4rem;
 
     &__hero {
         position: relative;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, rgba($accent-gold, 0.1), rgba($secondary, 0.8));
+        min-height: 300px;
+        /* Fallback if image fails to load */
 
-        img,
-        video {
-            grid-column: full-width;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
+        &-content {
+            grid-column: content;
+            max-width: 48rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            will-change: opacity, transform;
 
-            @media screen and (min-width: 768px) {
-                width: 100vw;
-                margin-left: calc(-50vw + 50%);
+            &.animate-in {
+                opacity: 1;
+                transform: translateY(0);
             }
-        }
-
-        &-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba($charcoal, 0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: $warm-white;
-            text-align: center;
-            padding: 2rem;
 
             h1 {
                 font-size: $h1-font-size;
                 font-weight: 700;
+                color: $charcoal;
                 margin-bottom: 1rem;
-                text-shadow: 0 2px 4px rgba($charcoal, 0.5);
-                transition: transform 0.2s ease;
-                will-change: transform;
+                text-shadow: 0 1px 2px rgba($charcoal, 0.2);
             }
 
             p {
                 font-family: "Playwrite HU";
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 line-height: 1.4;
+                color: $warm-gray;
                 max-width: 40rem;
-                text-shadow: 0 1px 2px rgba($charcoal, 0.5);
-                transition: transform 0.2s ease;
-                will-change: transform;
+                margin: 0 auto;
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 1200px;
+            /* Reinstated to constrain image */
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba($charcoal, 0.2);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            transform: scale(0.98);
+            will-change: transform, opacity;
+
+            &.animate-in {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            @media screen and (min-width: 768px) {
+                margin: 0 auto;
             }
         }
     }
 
     &__intro {
         grid-column: content;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
+        margin: 0 auto;
         text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $charcoal;
+            margin-bottom: 1rem;
+        }
 
         p {
             font-family: "Playwrite HU";
             font-size: 1.2rem;
             line-height: 1.6;
-            color: $charcoal;
-            max-width: 40rem;
-            margin: 0 auto 1.5rem;
+            color: $warm-gray;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
 
-            @media screen and (min-width: 768px) {
-                text-align: left;
-            }
+        @media screen and (min-width: 768px) {
+            text-align: left;
         }
     }
 
     &__skills {
         grid-column: content;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
 
-        @media screen and (min-width: 768px) {
-            grid-template-columns: repeat(2, 1fr);
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $charcoal;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+
+            @media screen and (min-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (min-width: 1200px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .skill-card {
             background: $warm-white;
-            border: 1px solid $light-gray;
-            border-radius: 5px;
+            border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 5px 8px 0 $accent-gold;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform, box-shadow;
+            box-shadow: 0 2px 8px rgba($charcoal, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            will-change: transform, opacity;
+
+            &.animate-in {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
             &:hover {
-                transform: translateY(-4px);
-                box-shadow: 5px 8px 0 darken($accent-gold, 10%);
+                transform: translateY(-6px);
+                box-shadow: 0 4px 12px rgba($accent-gold, 0.3);
             }
 
             h3 {
                 font-size: 1.3rem;
+                font-weight: 600;
                 color: $charcoal;
                 margin-bottom: 0.5rem;
             }
 
             p {
                 font-size: 1rem;
-                color: $warm-gray;
                 line-height: 1.5;
+                color: $warm-gray;
             }
         }
     }
@@ -124,27 +165,75 @@
     &__cta {
         grid-column: content;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $charcoal;
+            margin-bottom: 1.5rem;
+        }
 
         .cta-btn {
             background: linear-gradient(135deg, $accent-gold, darken($accent-gold, 10%));
             color: $warm-white;
             border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
             font-weight: 500;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 2px 6px rgba($charcoal, 0.2);
             will-change: transform, box-shadow;
-            box-shadow: 0 2px 4px rgba($charcoal, 0.2);
+
+            &.animate-in {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
             &:hover {
                 background: linear-gradient(135deg, darken($accent-gold, 5%), darken($accent-gold, 15%));
-                transform: translateY(-2px);
-                box-shadow: 0 4px 8px rgba($accent-gold, 0.6);
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba($accent-gold, 0.4);
             }
         }
     }
+}
+
+.content-grid {
+    padding-top: 8rem;
+    margin-inline: auto;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: [full-width-start] 1rem [breakout-start] 1rem [content-start] 1fr [content-end] 1rem [breakout-end] 1rem [full-width-end];
+
+    /* Tablet: ≥768px */
+    @media screen and (min-width: 768px) {
+        padding-top: 10rem;
+        max-width: 80rem;
+        /* Wider max-width for larger screens */
+        grid-template-columns: [full-width-start] min(4rem, 5vw) [breakout-start] 1fr [content-start] minmax(0, 64rem) [content-end] 1fr [breakout-end] min(4rem, 5vw) [full-width-end];
+        gap: 1.5rem;
+    }
+
+    /* Desktop: ≥1200px */
+    @media screen and (min-width: 1200px) {
+        max-width: 90rem;
+        grid-template-columns: [full-width-start] min(6rem, 6vw) [breakout-start] 1fr [content-start] minmax(0, 72rem) [content-end] 1fr [breakout-end] min(6rem, 6vw) [full-width-end];
+        gap: 2rem;
+    }
+}
+
+.content-grid>* {
+    grid-column: content;
+}
+
+.content-grid .breakout {
+    grid-column: breakout;
+}
+
+.content-grid .full-width {
+    grid-column: full-width;
 }
