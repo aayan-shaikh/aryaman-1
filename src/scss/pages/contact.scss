@@ -137,6 +137,7 @@
 
                 &::placeholder {
                     color: $warm-gray;
+                    text-transform: capitalize;
                     opacity: 0.7;
                 }
             }
