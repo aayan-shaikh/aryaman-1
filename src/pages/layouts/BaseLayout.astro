@@ -3,6 +3,20 @@ import "../../scss/index.scss";
 import { img } from "astro:assets";
 import Logo from "../../assets/images-avif/transparent-black.avif";
 import ProfilePic from "../../assets/images-avif/aryaman.avif";
+
+// Import favicons
+import faviconIco from "../../assets/favicon/favicon.ico";
+import faviconSvg from "../../assets/favicon/favicon.svg";
+import appleTouchIcon from "../../assets/favicon/apple-touch-icon.png";
+import icon192 from "../../assets/favicon/web-app-manifest-192x192.png";
+import icon512 from "../../assets/favicon/web-app-manifest-512x512.png";
+import webmanifest from "../../assets/favicon/site.webmanifest";
+
+// Default SEO values
+const defaultTitle = "ASK Designs | Graphic Design & Brand Identity";
+const defaultDescription =
+    "Aryaman Kaushik is a Graphic Designer specializing in Brand Identity, Digital Marketing & Print Design. Trained in Florence, Italy and based in Pune, India.";
+const siteUrl = "https://aryamankaushik.com";
 ---
 
 <!doctype html>
@@ -10,6 +24,78 @@ import ProfilePic from "../../assets/images-avif/aryaman.avif";
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO -->
+        <!-- Basic Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Primary Meta Tags -->
+        <title>{Astro.props.title || defaultTitle}</title>
+        <meta name="title" content={Astro.props.title || defaultTitle} />
+        <meta
+            name="description"
+            content={Astro.props.description || defaultDescription}
+        />
+        <meta name="author" content="Aryaman Kaushik" />
+
+        <!-- Open Graph / Facebook (for social sharing) -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content={new URL(Astro.url.pathname, siteUrl).toString()}
+        />
+        <meta property="og:title" content={Astro.props.title || defaultTitle} />
+        <meta
+            property="og:description"
+            content={Astro.props.description || defaultDescription}
+        />
+        <meta
+            property="og:image"
+            content={new URL("/social-preview.jpg", siteUrl).toString()}
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content={new URL(Astro.url.pathname, siteUrl).toString()}
+        />
+        <meta
+            property="twitter:title"
+            content={Astro.props.title || defaultTitle}
+        />
+        <meta
+            property="twitter:description"
+            content={Astro.props.description || defaultDescription}
+        />
+        <meta
+            property="twitter:image"
+            content={new URL("/social-preview.jpg", siteUrl).toString()}
+        />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href={new URL(Astro.url.pathname, siteUrl).toString()}
+        />
+
+        <!-- SEO END -->
+
+        <!-- Basic favicon -->
+        <link rel="icon" type="image/x-icon" href={faviconIco} />
+        <link rel="icon" type="image/svg+xml" href={faviconSvg} />
+
+        <!-- Apple Touch Icon -->
+        <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
+
+        <!-- Android Chrome -->
+        <link rel="icon" type="image/png" sizes="192x192" href={icon192} />
+        <link rel="icon" type="image/png" sizes="512x512" href={icon512} />
+
+        <!-- Web App Manifest -->
+        <link rel="manifest" href={webmanifest} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -21,6 +107,11 @@ import ProfilePic from "../../assets/images-avif/aryaman.avif";
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&display=swap"
             rel="stylesheet"
+        />
+        <link
+            rel="shortcut icon"
+            href="../../assets/favicon.ico"
+            type="image/x-icon"
         />
         <title>ASK</title>
     </head>

@@ -1,0 +1,197 @@
+src/
+src/.DS_Store
+src/scss
+src/scss/index.scss
+src/scss/components
+src/scss/components/index.scss
+src/scss/components/navbar.scss
+src/scss/components/button.scss
+src/scss/components/footer.scss
+src/scss/variables
+src/scss/variables/variables.scss
+src/scss/variables/index.scss
+src/scss/variables/colors.scss
+src/scss/variables/mixins.scss
+src/scss/pages
+src/scss/pages/contact.scss
+src/scss/pages/about.scss
+src/scss/pages/projects
+src/scss/pages/projects/all-projects.scss
+src/scss/pages/projects/tyme.scss
+src/scss/pages/projects/projects.scss
+src/scss/pages/projects/M&W-1.scss
+src/scss/pages/projects/spaceman-cup.scss
+src/scss/pages/projects/life-calendar.scss
+src/scss/pages/projects/aura-table.scss
+src/scss/pages/projects/M&W-2.scss
+src/scss/pages/projects/base-project.scss
+src/scss/pages/projects/oliva-olio.scss
+src/scss/base
+src/scss/base/index.scss
+src/scss/base/reset.scss
+src/scss/base/typography.scss
+src/favicon
+src/favicon/favicon.ico
+src/favicon/web-app-manifest-192x192.png
+src/favicon/.DS_Store
+src/favicon/apple-touch-icon.png
+src/favicon/web-app-manifest-512x512.png
+src/favicon/site.webmanifest
+src/favicon/favicon-96x96.png
+src/favicon/favicon.svg
+src/scripts
+src/scripts/navbar.js
+src/templates
+src/templates/_typography.txt
+src/templates/mynavbar.txt
+src/templates/betternav.txt
+src/templates/base.txt
+src/assets
+src/assets/favicon.ico
+src/assets/.DS_Store
+src/assets/images
+src/assets/images/.DS_Store
+src/assets/images/mw1.0-1.jpeg
+src/assets/images/Tyeme
+src/assets/images/Tyeme/Tyeme video Final_Trim.mp4
+src/assets/images/Tyeme/2.164.png
+src/assets/images/Tyeme/close up.173.png
+src/assets/images/Tyeme/close up.175.png
+src/assets/images/Tattoo 1.0
+src/assets/images/Tattoo 1.0/14 mins is all it takes.jpg
+src/assets/images/Tattoo 1.0/Artboard 1.png
+src/assets/images/Tattoo 1.0/1.jpg
+src/assets/images/Life Calendar
+src/assets/images/Life Calendar/Mockup 1.0.jpg
+src/assets/images/Life Calendar/IMG_0981.png
+src/assets/images/Life Calendar/Final The Calendar_page-0001 (1).jpg
+src/assets/images/Aura Table
+src/assets/images/Aura Table/re edit.jpg
+src/assets/images/Aura Table/animation 2.mp4
+src/assets/images/Aura Table/wood 2.jpg
+src/assets/images/Aura Table/wood 3.jpg
+src/assets/images/Aura Table/upon raising 1.jpg
+src/assets/images/Aura Table/wood 1.jpg
+src/assets/images/Aura Table/Moodboard 2.jpg
+src/assets/images/Aura Table/Moodboard 3.jpg
+src/assets/images/Aura Table/Moodboard 1.jpg
+src/assets/images/Aura Table/w logo 3.jpg
+src/assets/images/Aura Table/w logo 1.jpg
+src/assets/images/MnW 1.0
+src/assets/images/MnW 1.0/Final 1.0.jpg
+src/assets/images/MnW 1.0/Artboard 4-100.jpg
+src/assets/images/MnW 1.0/Artboard 5-100.jpg
+src/assets/images/MnW 1.0/Artboard 3-100.jpg
+src/assets/images/mw1.0-4.jpeg
+src/assets/images/Spaceman Cup
+src/assets/images/Spaceman Cup/f4.jpg
+src/assets/images/Spaceman Cup/moon2.png
+src/assets/images/Spaceman Cup/F1.jpg
+src/assets/images/Spaceman Cup/F2.jpg
+src/assets/images/Spaceman Cup/f3.jpg
+src/assets/images/Oliva Olio
+src/assets/images/Oliva Olio/Edited image brev-2.png
+src/assets/images/Oliva Olio/Edited image brev-3.png
+src/assets/images/Oliva Olio/Edited image brev-5.png
+src/assets/images/Oliva Olio/sketch.jpg
+src/assets/images/Oliva Olio/2.compressed.png
+src/assets/images/MnW 2.0
+src/assets/images/MnW 2.0/Final.jpg
+src/assets/images/MnW 2.0/2.0.jpg
+src/assets/images/MnW 2.0/left.jpg
+src/assets/images/MnW 2.0/right.jpg
+src/assets/images/mw1.0-3.jpeg
+src/assets/images-avif
+src/assets/images-avif/.DS_Store
+src/assets/images-avif/aryaman.avif
+src/assets/images-avif/behance banner-01.avif
+src/assets/images-avif/Tyeme
+src/assets/images-avif/Tyeme/2.164.avif
+src/assets/images-avif/Tyeme/close up.175.avif
+src/assets/images-avif/Tyeme/close up.173.avif
+src/assets/images-avif/behance banner 2-01.avif
+src/assets/images-avif/mw1.0-1.avif
+src/assets/images-avif/Tattoo 1.0
+src/assets/images-avif/Tattoo 1.0/14 mins is all it takes.avif
+src/assets/images-avif/Tattoo 1.0/Artboard 1.avif
+src/assets/images-avif/Tattoo 1.0/1.avif
+src/assets/images-avif/Life Calendar
+src/assets/images-avif/Life Calendar/Mockup 1.0.avif
+src/assets/images-avif/Life Calendar/Final The Calendar_page-0001 (1).avif
+src/assets/images-avif/Life Calendar/IMG_0981.avif
+src/assets/images-avif/transparent-black.avif
+src/assets/images-avif/Aura Table
+src/assets/images-avif/Aura Table/Moodboard 3.avif
+src/assets/images-avif/Aura Table/w logo 1.avif
+src/assets/images-avif/Aura Table/upon raising 1.avif
+src/assets/images-avif/Aura Table/Moodboard 2.avif
+src/assets/images-avif/Aura Table/wood 2.avif
+src/assets/images-avif/Aura Table/wood 3.avif
+src/assets/images-avif/Aura Table/wood 1.avif
+src/assets/images-avif/Aura Table/re edit.avif
+src/assets/images-avif/Aura Table/w logo 3.avif
+src/assets/images-avif/Aura Table/Moodboard 1.avif
+src/assets/images-avif/MnW 1.0
+src/assets/images-avif/MnW 1.0/Artboard 3-100.avif
+src/assets/images-avif/MnW 1.0/Final 1.0.avif
+src/assets/images-avif/MnW 1.0/Artboard 4-100.avif
+src/assets/images-avif/MnW 1.0/Artboard 5-100.avif
+src/assets/images-avif/mw1.0-3.avif
+src/assets/images-avif/Black on White.avif
+src/assets/images-avif/White on Black-01.avif
+src/assets/images-avif/transparent white-01.avif
+src/assets/images-avif/Spaceman Cup
+src/assets/images-avif/Spaceman Cup/f4.avif
+src/assets/images-avif/Spaceman Cup/f3.avif
+src/assets/images-avif/Spaceman Cup/F2.avif
+src/assets/images-avif/Spaceman Cup/F1.avif
+src/assets/images-avif/Spaceman Cup/moon2.avif
+src/assets/images-avif/Oliva Olio
+src/assets/images-avif/Oliva Olio/Edited image brev-2.avif
+src/assets/images-avif/Oliva Olio/Edited image brev-3.avif
+src/assets/images-avif/Oliva Olio/sketch.avif
+src/assets/images-avif/Oliva Olio/Edited image brev-5.avif
+src/assets/images-avif/Oliva Olio/2.compressed.avif
+src/assets/images-avif/MnW 2.0
+src/assets/images-avif/MnW 2.0/2.0.avif
+src/assets/images-avif/MnW 2.0/left.avif
+src/assets/images-avif/MnW 2.0/right.avif
+src/assets/images-avif/MnW 2.0/Final.avif
+src/assets/images-avif/mw1.0-4.avif
+src/assets/favicon
+src/assets/favicon/favicon.ico
+src/assets/favicon/web-app-manifest-192x192.png
+src/assets/favicon/.DS_Store
+src/assets/favicon/apple-touch-icon.png
+src/assets/favicon/web-app-manifest-512x512.png
+src/assets/favicon/site.webmanifest
+src/assets/favicon/favicon-96x96.png
+src/assets/favicon/favicon.svg
+src/assets/ying-yang.svg
+src/assets/logo-profile
+src/assets/logo-profile/behance banner 2-01.jpg
+src/assets/logo-profile/AG img_0393.tif
+src/assets/logo-profile/Black on White.jpg
+src/assets/logo-profile/AG img_0393 touchup.jpg
+src/assets/logo-profile/White on Black-01.jpg
+src/assets/logo-profile/transparent black.png
+src/assets/logo-profile/behance banner-01.jpg
+src/assets/logo-profile/transparent white-01.png
+src/pages
+src/pages/about.astro
+src/pages/index.astro
+src/pages/projects
+src/pages/projects/oliva-olio.astro
+src/pages/projects/mandw-1.astro
+src/pages/projects/index.astro
+src/pages/projects/life-calendar.astro
+src/pages/projects/mandw-2.astro
+src/pages/projects/tyme.astro
+src/pages/projects/aura-table.astro
+src/pages/projects/spaceman-cup.astro
+src/pages/contact.astro
+src/pages/components
+src/pages/components/_button.astro
+src/pages/layouts
+src/pages/layouts/BaseLayout.astro
+src/pages/layouts/BaseProjectLayout.astro
