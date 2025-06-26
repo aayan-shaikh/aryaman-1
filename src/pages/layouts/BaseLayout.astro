@@ -1,5 +1,8 @@
 ---
 import "../../scss/index.scss";
+import { img } from "astro:assets";
+import Logo from "../../assets/images-avif/transparent-black.avif";
+import ProfilePic from "../../assets/images-avif/aryaman.avif";
 ---
 
 <!doctype html>
@@ -31,9 +34,9 @@ import "../../scss/index.scss";
                     <a href="/" class="navbar__logo">
                         <span class="navbar__logo-icon">
                             <img
-                                src="https://placehold.co/400"
-                                width="50"
-                                height="50"
+                                src={Logo.src}
+                                width="70"
+                                height="70"
                                 alt="Your Brand Logo"
                             />
                         </span>
@@ -48,11 +51,11 @@ import "../../scss/index.scss";
                                 >Home</a
                             >
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/services/" class="navbar__menu-link"
                                 >Services</a
                             >
-                        </li>
+                        </li> -->
                         <li class="navbar__dropdown">
                             <span class="navbar__menu-link has-dropdown"
                                 >Projects</span

@@ -15,11 +15,20 @@
 }
 
 .radial-menu {
-    margin: 10rem auto;
-    transform: scale(1.2);
+    margin: 20rem auto;
+    // transform: scale(1.2);
     position: relative;
     width: 400px;
     height: 400px;
+
+    // padding-top: 10rem;
+    // outline: 1px solid lime;
+    @media (min-width:768px) {
+        transform: scale(1.2);
+
+    }
+
+
 }
 
 .center-circle {
@@ -32,6 +41,8 @@
     border: 3px solid black;
     border-radius: 50%;
     transform: translate(-50%, -50%);
+
+
 }
 
 .menu-items {
@@ -90,6 +101,7 @@ span {
 }
 
 /* Positioning and initial rotation for each menu item */
+// AURA TABLE
 .menu-item:nth-child(1) {
     transform: translate(-50%, -50%) translateY(-150px);
 
@@ -105,42 +117,48 @@ span {
     }
 }
 
+// LIFE CALENDAR
 .menu-item:nth-child(2) {
     transform: translate(-50%, -50%) translate(106px, -106px);
 
 
     span {
         transform: rotate(-45deg);
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         /* 45° position */
-        margin-left: 2rem;
+        margin-left: 3rem;
     }
 }
 
+// MW 1
 .menu-item:nth-child(3) {
     transform: translate(-50%, -50%) translateX(150px);
 
 
     span {
         transform: rotate(0deg);
-        margin-left: 2rem;
-        margin-top: 2rem;
+        margin-left: 0rem;
+        margin-top: 0rem;
         /* 90° position: horizontal */
     }
 }
 
+
+// MW 2
 .menu-item:nth-child(4) {
     transform: translate(-50%, -50%) translate(106px, 106px);
 
 
     span {
         transform: rotate(45deg);
-        margin-top: 2rem;
-        margin-left: 2rem;
+        margin-top: 0rem;
+        margin-left: 0rem;
         /* 135° position */
     }
 }
 
+
+// OLIVA OLIO
 .menu-item:nth-child(5) {
     transform: translate(-50%, -50%) translateY(150px);
 
@@ -152,12 +170,16 @@ span {
     }
 }
 
+
+// SPACEMAN CUP
 .menu-item:nth-child(6) {
     transform: translate(-50%, -50%) translate(-106px, 106px);
 
 
     span {
         transform: rotate(135deg);
+        margin-top: 3rem;
+        margin-right: 3rem;
         /* 225° position */
     }
 }
@@ -178,6 +200,8 @@ span {
 
     span {
         transform: rotate(-135deg);
+        margin-right: 2rem;
+        margin-bottom: 2rem;
         /* 315° position */
     }
 }

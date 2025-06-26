@@ -1,0 +1,57 @@
+@use '../../base/' as *;
+@use '../../variables/' as *;
+
+
+
+.container {
+    padding-top: 8rem;
+    padding-inline: 4rem;
+    min-height: 100vh;
+}
+
+.container ol {
+
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width:768px) {
+        grid-template-columns: 1fr;
+
+    }
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    gap: 3rem;
+}
+
+.container a {
+
+
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    &::after {
+        content: "";
+        position: relative;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 5px;
+        background: $accent-gold;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        // color: lime;
+
+        &::after {
+            background: pink;
+
+            width: 80px;
+        }
+    }
+}

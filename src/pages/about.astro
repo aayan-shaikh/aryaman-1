@@ -1,74 +1,77 @@
 ---
 import BaseLayout from "./layouts/BaseLayout.astro";
 // import heroImage from "../assets/images/about-hero.avif";
+import { img } from "astro:assets";
+import ProfilePic from "../assets/images-avif/aryaman.avif";
+
 import "../scss/pages/about.scss";
 ---
 
 <BaseLayout>
-    <div class="about content-grid">
-        <section class="about__hero">
-            <div class="about__hero-content">
-                <h1>About Me</h1>
-                <p>Creating timeless designs that inspire and delight.</p>
-            </div>
-            <img
-                src="https://placehold.co/500"
-                alt="
-                Designer
-                at
-                work"
-            />
-        </section>
-
-        <section class="about__intro">
-            <h2>My Story</h2>
-            <p>
-                Aryaman Kaushik is a Graphic Designer, with his area of
-                expertise lying in Brand Identity, Digital Marketing & Print
-                Design. He has trained under reputable Italian designers &
-                teachers in Florence, Italy, and is currently based in Pune,
-                India.
-            </p>
-        </section>
-
-        <section class="about__skills">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Product Design</h3>
-                    <p>
-                        Designing innovative products that balance aesthetics
-                        and functionality, from concept to prototype.
-                    </p>
+    <div class="container">
+        <div class="about content-grid">
+            <section class="about__hero">
+                <div class="about__hero-content">
+                    <h1>About Me</h1>
+                    <p>Creating timeless designs that inspire and delight.</p>
                 </div>
-                <div class="skill-card">
-                    <h3>Furniture Design</h3>
-                    <p>
-                        Creating unique furniture pieces like the Aura Table,
-                        tailored to enhance living spaces.
-                    </p>
+                <img
+                    src={ProfilePic.src}
+                    alt="
+                    Designer
+                    at
+                    work"
+                />
+            </section>
+            <section class="about__intro">
+                <h2>My Story</h2>
+                <p>
+                    Aryaman Kaushik is a Graphic Designer, with his area of
+                    expertise lying in Brand Identity, Digital Marketing & Print
+                    Design. He has trained under reputable Italian designers &
+                    teachers in Florence, Italy, and is currently based in Pune,
+                    India.
+                </p>
+            </section>
+            <section class="about__skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Product Design</h3>
+                        <p>
+                            Designing innovative products that balance
+                            aesthetics and functionality, from concept to
+                            prototype.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Furniture Design</h3>
+                        <p>
+                            Creating unique furniture pieces like the Aura
+                            Table, tailored to enhance living spaces.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Creative Direction</h3>
+                        <p>
+                            Leading projects with a vision that ensures cohesive
+                            and impactful design outcomes.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Prototyping</h3>
+                        <p>
+                            Building and testing prototypes to refine designs
+                            for real-world use.
+                        </p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>Creative Direction</h3>
-                    <p>
-                        Leading projects with a vision that ensures cohesive and
-                        impactful design outcomes.
-                    </p>
-                </div>
-                <div class="skill-card">
-                    <h3>Prototyping</h3>
-                    <p>
-                        Building and testing prototypes to refine designs for
-                        real-world use.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about__cta">
-            <h2>Let's Collaborate</h2>
-            <a href="/contact" class="cta-btn">Get in Touch</a>
-        </section>
+            </section>
+            <section class="about__cta">
+                <h2>Let's Collaborate</h2>
+                <a href="/contact" class="cta-btn">Get in Touch</a>
+            </section>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

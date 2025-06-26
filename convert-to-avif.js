@@ -3,7 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 // Configuration
-const sourceDir = path.join(__dirname, 'src', 'assets', 'images');
+const sourceDir = path.join(__dirname, 'src', 'assets', 'logo-profile');
 const outputDir = path.join(__dirname, 'src', 'assets', 'images-avif');
 
 // Supported input formats

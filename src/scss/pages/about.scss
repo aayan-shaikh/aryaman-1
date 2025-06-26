@@ -2,6 +2,16 @@
 @use '../components' as *;
 @use '../base/' as *;
 
+.container {
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+
+}
+
 .about {
     background-color: $secondary;
     padding-bottom: 4rem;
@@ -13,8 +23,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 2rem 1rem;
-        background: linear-gradient(135deg, rgba($accent-gold, 0.1), rgba($secondary, 0.8));
+        // padding: 2rem 1rem;
+        // background: linear-gradient(135deg, rgba($accent-gold, 0.1), rgba($secondary, 0.8));
         min-height: 300px;
         /* Fallback if image fails to load */
 
@@ -34,9 +44,11 @@
 
             h1 {
                 font-size: $h1-font-size;
-                font-weight: 700;
+
                 color: $charcoal;
                 margin-bottom: 1rem;
+
+                line-height: 1;
                 text-shadow: 0 1px 2px rgba($charcoal, 0.2);
             }
 
@@ -47,19 +59,21 @@
                 color: $warm-gray;
                 max-width: 40rem;
                 margin: 0 auto;
+
             }
         }
 
-        .hero-image {
+        img {
             width: 100%;
-            max-width: 1200px;
+            // max-height: 500px;
             /* Reinstated to constrain image */
             height: auto;
             object-fit: cover;
+            aspect-ratio: 1/1;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba($charcoal, 0.2);
             transition: transform 0.5s ease, opacity 0.5s ease;
-            opacity: 0;
+            // opacity: 0;
             transform: scale(0.98);
             will-change: transform, opacity;
 
@@ -69,7 +83,10 @@
             }
 
             @media screen and (min-width: 768px) {
-                margin: 0 auto;
+                // margin: 0 auto;
+                // height: 200px;
+                // width: 200px;
+
             }
         }
     }
@@ -79,6 +96,7 @@
         margin-bottom: 3rem;
         margin: 0 auto;
         text-align: center;
+        margin-bottom: 5rem;
 
         h2 {
             font-size: 2rem;
@@ -88,12 +106,12 @@
         }
 
         p {
-            font-family: "Playwrite HU";
+            // font-family: "Playwrite HU";
             font-size: 1.2rem;
             line-height: 1.6;
             color: $warm-gray;
             max-width: 48rem;
-            margin: 0 auto;
+            // margin: 0 auto;
         }
 
         @media screen and (min-width: 768px) {
@@ -119,11 +137,11 @@
             gap: 1.5rem;
 
             @media screen and (min-width: 768px) {
-                grid-template-columns: repeat(2, 1fr);
+                // grid-template-columns: repeat(2, 1fr);
             }
 
             @media screen and (min-width: 1200px) {
-                grid-template-columns: repeat(4, 1fr);
+                // grid-template-columns: repeat(4, 1fr);
             }
         }
 

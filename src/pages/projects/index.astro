@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../../scss/pages/projects/all-projects.scss";
+
+// Get all .astro files in the projects directory except index.astro
+const allProjects = await Astro.glob("./*.astro");
+const projects = allProjects.filter(
+    (project) => !project.file.includes("index.astro"),
+);
+
+// Extract project names from file paths
+const projectList = projects.map((project) => ({
+    name: project.file
+        .replace(
+            "/Users/aayanshaikh/Documents/code/WebAgency/aryaman/aryaman-1/src/pages/projects/",
+            "",
+        )
+        .replace(".astro", ""),
+    url: project.file.replace(".astro", ""),
+}));
+---
+
+<BaseLayout>
+    <div class="container">
+        <h1>All projects</h1>
+        <ol>
+            {
+                projectList.map((project) => (
+                    <li>
+                        <a href={`./${project.name}`}>{project.name}</a>
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</BaseLayout>
