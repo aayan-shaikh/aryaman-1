@@ -4,7 +4,7 @@
 .footer {
     background-color: $primary;
     color: $charcoal;
-    padding-inline: 1rem;
+    padding-inline: 6rem;
     padding-top: 4rem;
 
     display: grid;
@@ -14,7 +14,10 @@
     margin: 0 auto;
     border-top: 3px solid $accent-gold;
 
+
     .footer-column {
+        padding-bottom: 5rem;
+
         h3 {
             color: $accent-gold;
             font-size: 1.25rem;
