@@ -94,11 +94,15 @@
     transform: scale(1.1);
 }
 
-span {
+.menu-item span {
+    will-change: border-bottom;
     font-weight: 400;
     letter-spacing: 1px;
     font-size: 1rem;
-    transition: border-bottom 0.1s ease-out;
+    transition: border-bottom 0.1s cubic-bezier(.17, .67, .83, .67);
+    border-bottom: 0px solid $accent-gold;
+
+
 
     &:hover {
         border-bottom: 3px solid $accent-gold;
