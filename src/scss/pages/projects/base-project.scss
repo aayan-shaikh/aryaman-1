@@ -8,6 +8,7 @@
 .content-grid {
     padding-top: 12rem;
     margin-inline: auto;
+    padding-bottom: 4rem;
     max-width: 100%;
     display: grid;
     grid-template-columns: [full-width-start] 1rem [breakout-start] 1rem [content-start] 1fr [content-end] 1rem [breakout-end] 1rem [full-width-end];
@@ -59,7 +60,7 @@
     height: auto;
     max-width: 100%;
     border-radius: 5px;
-    margin-bottom: 1.5rem;
+    // margin-bottom: 1.5rem;
 }
 
 .content-grid .card {
@@ -108,7 +109,7 @@
     margin-bottom: 1.5rem;
 
     p {
-        margin-bottom: 1.5rem;
+        // margin-bottom: 1.5rem;
         text-align: left;
 
         @media screen and (min-width: 768px) {
