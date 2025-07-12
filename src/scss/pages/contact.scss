@@ -56,7 +56,7 @@
         margin-bottom: 1rem;
         text-shadow: 0 1px 2px rgba($charcoal, 0.2);
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
         transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         will-change: opacity, transform;
 
